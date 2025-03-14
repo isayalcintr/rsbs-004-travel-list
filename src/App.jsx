@@ -10,6 +10,9 @@ const initialItems = [
 
 function App() {
   const [items, setItems] = useState(initialItems);
+  const clearItems = () => {
+    setItems([]);
+  };
   const addItem = (newItem) => setItems([...items, newItem]);
   const removeItem = (id) => setItems(items.filter((item) => item.id !== id));
   const toggleItem = (id) =>
@@ -26,6 +29,7 @@ function App() {
         items={items}
         removeItem={removeItem}
         toggleItem={toggleItem}
+        clearItems={clearItems}
       />
       <Stats items={items} />
     </div>
