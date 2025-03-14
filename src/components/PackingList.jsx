@@ -33,7 +33,10 @@ function PackingList({ items, removeItem, toggleItem, clearItems }) {
           ))}
       </ul>
       <div className="actions">
-        <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
+        <select
+          value={sortBy}
+          onChange={(e) => setSortBy(Number(e.target.value))}
+        >
           <option value="inpue">Sot by input order</option>
           <option value="description">Sort by description</option>
           <option value="packed">Sort by packed status</option>
